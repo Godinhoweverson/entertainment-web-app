@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import SideBar from './components/sideBar/SideBar'
+import Search from './components/search/Search'
+import Trending from './components/Trending'
 import './App.css'
 
 function App() {
@@ -7,7 +9,10 @@ function App() {
     <>
     <div id='container'>
       <SideBar/>
-      <main>main</main>
+      <main>
+        <Search/>
+        <Trending/>
+      </main>
     </div>
     </>
   )

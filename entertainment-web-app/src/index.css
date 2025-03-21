@@ -15,12 +15,19 @@
 
 body{
   background-color: #10141E;
+  font-family: "Outfit", sans-serif;
 }
 #container{
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   height: 100vh;
+  padding: 2rem;
+}
+
+main{
+  height: 100%;
+  width: 100%;
 }
 
 @media only screen and (max-width: 780px) {

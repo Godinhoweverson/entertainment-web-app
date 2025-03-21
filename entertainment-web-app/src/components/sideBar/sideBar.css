@@ -9,14 +9,13 @@
     justify-content: center;
     width: 8%;
     height: 100%;
-    padding: 1.25rem;
 }
 
 #navBar{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 90%;
+    height: 87%;
     width: 55%;
     flex-direction: column;
     background-color: #161D2F;
@@ -42,7 +41,7 @@
     #sideBar{
         flex-direction: row;
         width: 94%;
-        height: 10%;
+        height: 7.6%;
     }
     #navBar{
         height: 100%;

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import SideBar from './components/sideBar/SideBar'
 import Search from './components/search/Search'
-import Trending from './components/Trending'
+import Trending from './components/trending/Trending.jsx'
 import './App.css'
 
 function App() {

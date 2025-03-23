@@ -1,0 +1,47 @@
+#trending-scroller, #trending-group{
+    display: grid;
+    grid-auto-flow: column;
+    gap: 2.5rem;
+}
+
+#trending-scroller{
+    grid-auto-columns: 100%;
+    overflow: auto;
+    padding: 0 2rem  0 2rem;
+}
+
+#trending-group{
+    gap: 2.5rem;
+}
+
+.trending-item{
+    width: 470px;
+    height: 230px;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    position: relative;
+  
+}
+
+.trending-item > img{
+   height: 100%;
+   width: 100%;
+   object-fit: cover;
+}
+
+#trending-subImg{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    color: white;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.trending-bookmark{
+    
+}

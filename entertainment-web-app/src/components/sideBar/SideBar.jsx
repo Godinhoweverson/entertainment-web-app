@@ -1,9 +1,9 @@
-import home from '../../assets/icon-nav-home.svg'
-import movies from '../../assets/icon-nav-movies.svg'
-import bookmarkEmpty from '../../assets/icon-nav-bookmark.svg'
-import logo from '../../assets/logo.svg'
-import tvSeries from '../../assets/icon-nav-tv-series.svg'
-import avatar from '../../assets/image-avatar.png'
+import home from '../../../assets/icon-nav-home.svg'
+import movies from '../../../assets/icon-nav-movies.svg'
+import bookmarkEmpty from '../../../assets/icon-nav-bookmark.svg'
+import logo from '../../../assets/logo.svg'
+import tvSeries from '../../../assets/icon-nav-tv-series.svg'
+import avatar from '../../../assets/image-avatar.png'
 export default function SideBar(){
     return(
         <aside id="sideBar">

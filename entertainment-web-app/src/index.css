@@ -16,6 +16,7 @@
 body{
   background-color: #10141E;
   font-family: "Outfit", sans-serif;
+  overflow: hidden;
 }
 #container{
   display: flex;

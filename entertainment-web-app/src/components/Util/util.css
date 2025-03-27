@@ -1,0 +1,57 @@
+/* Information */
+
+.trending-movie-information{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    width: 36%;
+    height: 0.9rem;
+    font-weight: 100;
+}
+
+.dot{
+   padding-bottom: 10px;
+}
+.trending-movie-name{
+    margin-top: 0.9rem;
+    font-size: 1.12rem;
+    font-weight: 500;
+}
+
+@media only screen and (max-width: 440px) {
+
+    .trending-movie-information{
+        width: 60%;
+        font-size: 0.75rem;
+    }
+
+    .trending-movie-name{
+        margin-top: 0.4rem;
+        font-size: 0.93rem;
+
+    }
+}
+
+/* Button */
+#btnPlayer-container{
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+#btnPlayer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 117px;
+    height: 48px;
+    border-radius: 28.5px;
+    background-color: rgb(151, 151, 151, 30%);
+}
+
+#btnPlayer p{
+    color: #fff;
+    width: 60%;
+    font-size: 0.81rem;
+    font-weight: 200;
+}

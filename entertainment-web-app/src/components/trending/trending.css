@@ -84,9 +84,34 @@
 }
 
 
-.trending-movie-information{
-    display: flex;
-    justify-content:space-between;
-    align-items: center;
-    width: 35%;
+
+@media only screen and (max-width: 1024px) {
+    #trending-scroller {
+        padding: 0;
+    }
+}
+@media only screen and (max-width: 440px) {
+    #trending-scroller {
+        padding: 0;
+    }
+
+    #trending-subImg{
+        padding: 1rem;
+    }
+    
+    .trending-item{
+        width: 240px;
+        height: 140px; 
+    }
+
+    .trending-movie-information{
+        width: 60%;
+        font-size: 0.75rem;
+    }
+
+    .trending-movie-name{
+        margin-top: 0.4rem;
+        font-size: 0.93rem;
+
+    }
 }

@@ -1,16 +1,23 @@
 import DATA from '../../data.json';
 import bookmarkEmpty from '../../../assets/icon-bookmark-empty.svg';
-import categoryMovie from '../../../assets/icon-category-movie.svg';
-import categoryTv from '../../../assets/icon-category-tv.svg';
+import Information from '../Util/Information';
+import  Button from '../Util/Button.jsx'
+
+import { useState } from 'react';
 
 export default function Trending(){
+    const [btnPlayActive, setBtnPlayActive] = useState(false);
 
     return(
         <div id='trending-scroller'>
             <div id='trending-group'>
                 {DATA.map((movie) =>(
                     movie.isTrending ? (
-                        <div className='trending-item' key={movie.title}>
+                        <div
+                         className='trending-item'
+                         key={movie.title}
+                           onMouseEnter={() => setBtnPlayActive(true)}
+                           onMouseLeave={() => setBtnPlayActive(false)}>
                             <img src={movie.thumbnail.trending.large} alt={movie.title} />
                             <div id='trending-subImg'>
                                 <div className='trending-bookmark'>
@@ -18,19 +25,8 @@ export default function Trending(){
                                         <img src={bookmarkEmpty} alt="Bookmark" />
                                     </div>
                                 </div>
-                                <div id='trending-information'>
-                                    <div className='trending-movie-information'>
-                                        <div className='trending-information-item'>{movie.year}</div>
-                                        <div className='trending-information-item'>
-                                            {movie.category === "Movie" 
-                                                ? <><img src={categoryMovie} alt='category movie' /> {movie.category}</>
-                                                : <><img src={categoryTv} alt='category tv' /> {movie.category}</>}
-                                        </div>
-                                        <div className='trending-information-item'>{movie.rating}</div>
-                                    </div>
-                                    <div className='trending-movie-name'>{movie.title}</div>
-                                </div>
-                                
+                                <Button hoover={btnPlayActive}/>
+                                <Information year={movie.year} category={movie.category} rating={movie.rating} title={movie.title}/>
                             </div>
                         </div> ):
                         null

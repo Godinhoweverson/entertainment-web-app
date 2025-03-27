@@ -37,7 +37,7 @@
     height: 2.5rem;
 }
 
-@media only screen and (max-width: 780px) {
+@media only screen and (max-width: 1024px) {
     #sideBar{
         flex-direction: row;
         width: 94%;

@@ -1,3 +1,10 @@
+#heading-trending{
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 200;
+    padding: 2rem;
+}
+
 #trending-scroller, #trending-group{
     display: grid;
     grid-auto-flow: column;
@@ -34,63 +41,18 @@
     background-color: #555;
   }
 
-#trending-group{
-    gap: 2.5rem;
-}
-
-.trending-item{
-    width: 470px;
-    height: 230px;
-    border-radius: 0.5rem;
-    overflow: hidden;
-    position: relative;
-  
-}
-
-.trending-item > img{
-   height: 100%;
-   width: 100%;
-   object-fit: cover;
-}
-
-#trending-subImg{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    position: absolute;
-    color: white;
-    z-index: 2;
-    top: 0;
-    left: 0;
-    width: 90%;
-    height: 80%;
-    padding: 1.5rem;
-}
-
-.trending-bookmark{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-.circle-trending-bookmark{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 2rem;
-    width: 2rem;
-    background-color:rgba(16, 20, 30, 0.5);
-    border-radius: 50%;
-}
-
-
-
 @media only screen and (max-width: 1024px) {
+    #heading-trending{
+        padding: 2rem 0 2rem 0;
+    }
     #trending-scroller {
         padding: 0;
     }
 }
 @media only screen and (max-width: 440px) {
+    #heading-trending{
+       font-size: 1.25rem;
+    }
     #trending-scroller {
         padding: 0;
     }

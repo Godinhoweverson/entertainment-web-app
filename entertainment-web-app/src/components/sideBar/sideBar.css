@@ -40,8 +40,8 @@
 @media only screen and (max-width: 1024px) {
     #sideBar{
         flex-direction: row;
-        width: 94%;
-        height: 7.6%;
+        width: 100%;
+        height: 8%;
     }
     #navBar{
         height: 100%;

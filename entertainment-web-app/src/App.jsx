@@ -3,6 +3,7 @@ import SideBar from './components/sideBar/SideBar'
 import Search from './components/search/Search'
 import Trending from './components/trending/Trending.jsx'
 import './App.css'
+import Content from './components/content/Content.jsx'
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <main>
         <Search/>
         <Trending/>
+        <Content/>
       </main>
     </div>
     </>

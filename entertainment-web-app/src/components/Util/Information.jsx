@@ -3,8 +3,8 @@ import categoryTv from '../../../assets/icon-category-tv.svg';
 
 export default function Information({year, category, rating, title}){
     return(
-        <div id='trending-information'>
-            <div className='trending-movie-information'>
+        <div id='trending-information' >
+            <div className='trending-movie-information' style={{width: category === 'Movie' ? '46%' : '56%'}}>
                 <div className='trending-information-item'>{year}</div>
                 <div className='dot'>.</div>
                 <div className='trending-information-item'>

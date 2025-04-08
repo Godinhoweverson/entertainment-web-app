@@ -17,7 +17,8 @@
 }
 
 #trending-scroller:hover{
-    overflow:auto;
+    overflow-x:auto;
+    overflow-y: hidden;
 }
 
 #trending-scroller::-webkit-scrollbar {

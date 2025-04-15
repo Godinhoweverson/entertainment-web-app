@@ -95,7 +95,7 @@
         padding: 0;
     }
 }
-@media only screen and (max-width: 440px) {
+@media only screen and (max-width: 620px) {
     #heading-trending{
        font-size: 1.25rem;
     }

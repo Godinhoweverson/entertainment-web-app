@@ -7,9 +7,6 @@
     padding: 0 2rem 0 2rem;
 }
 
-#content-item{
-}
-
 #content{
     position: relative;
     margin-bottom: 0.5rem;
@@ -34,4 +31,19 @@
     width: 100%;
     height: 100%;
     border-radius: 0.5rem;
+}
+
+@media only screen and (max-width:1024px) {
+    #content-group{
+        grid-template-columns: auto auto auto;
+        grid-template-rows: auto;
+        padding: 0;
+    }
+}
+
+@media only screen and (max-width:620px) {
+    #content-group{
+        grid-template-columns: auto auto;
+        grid-template-rows: auto;
+    }
 }

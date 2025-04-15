@@ -29,8 +29,7 @@ export default function Content(){
                                     <img  src={bookmarkEmpty} alt="Bookmark" />
                                 </div>
                                 <div>
-                                    <Button/>
-                                {/* {btnPlayActive === item.title && <Button hoover={btnPlayActive} />} */}
+                                {btnPlayActive === item.title && <Button hoover={btnPlayActive} />}
                                     </div>
                                 <img id='image-content' src={item.thumbnail.regular.large} alt={item.tite} />
                             </div>

@@ -3,6 +3,7 @@ body{
   font-family: "Outfit", sans-serif;
   overflow-x: hidden;
   min-height: 100vh;
+  width: 100%;
 }
 #container{
   display: flex;
@@ -18,7 +19,17 @@ main{
 }
 
 @media only screen and (max-width: 1024px) {
+  main{
+    width: 100%;
+  }
   #container{
     flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 440px) {
+
+  #container{
+    padding: 0.5rem;
   }
 }

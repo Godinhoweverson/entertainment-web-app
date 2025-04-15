@@ -32,8 +32,7 @@ export default function Trending(){
                                         </div>
                                     </div>
                                     <div>
-                                        <Button/>
-                                        {/* {btnPlayActive === item.title && <Button hoover={btnPlayActive} />} */}
+                                        {btnPlayActive === item.title && <Button hoover={btnPlayActive} />}
                                     </div>
                                     <Information year={item.year} category={item.category} rating={item.rating} title={item.title} />
                                 </div>

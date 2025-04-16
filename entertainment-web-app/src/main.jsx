@@ -7,9 +7,11 @@ import './components/trending/trending.css'
 import './components/Util/util.css'
 import './components/content/content.css'
 import App from './App.jsx'
+import store  from '../src/store'
+import { Provider } from 'react-redux'
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
+  <Provider store={store}>
     <App />
-  </StrictMode>,
+  </Provider>
 )

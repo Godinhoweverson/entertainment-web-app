@@ -2,11 +2,15 @@ import DATA from '../../data.json';
 import bookmarkEmpty from '../../../assets/icon-bookmark-empty.svg'
 import Button from '../Util/Button.jsx';
 import Information from '../Util/Information.jsx'
-
-
+import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 
 export default function Trending(){
+    const dispatch = useDispatch();
+
+    const isSelected = useSelector((state) => state.category)
+
+
     const [btnPlayActive, setBtnPlayActive] = useState(false);
 
     function handleMouseOver(title){

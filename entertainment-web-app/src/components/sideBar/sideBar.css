@@ -32,6 +32,12 @@
     flex-direction: column;
 }
 
+/* #iconSelection img{
+   width: 1.25rem;
+   height: 1.25rem;
+} */
+
+
 #profile img{
     width: 2.5rem;
     height: 2.5rem;

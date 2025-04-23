@@ -2,13 +2,13 @@ import {createSlice} from '@reduxjs/toolkit';
 
 const categories = createSlice({
     name:'category',
-    initialState: {isClicked: false},
+    initialState: {category: false},
     reducers:{
-        categoryToggle(state){
-            state.isClicked = !state.isClicked
+        categoryChoice(state, action){
+            state.category = action.payload.category;
         },
     },
-})
+});
 
 export const categoryActions= categories.actions;
 export default categories

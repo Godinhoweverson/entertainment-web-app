@@ -2,17 +2,13 @@ import DATA from '../../data.json';
 import bookmarkEmpty from '../../../assets/icon-bookmark-empty.svg'
 import Button from '../Util/Button.jsx';
 import Information from '../Util/Information.jsx'
-import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 
 export default function Trending(){
-    const dispatch = useDispatch();
-
-    const isSelected = useSelector((state) => state.category)
-
-
+    const categories = useSelector((state) => state.category.category);
     const [btnPlayActive, setBtnPlayActive] = useState(false);
-
+    
     function handleMouseOver(title){
         setBtnPlayActive(title) ;
     }
@@ -21,7 +17,7 @@ export default function Trending(){
         setBtnPlayActive(false);
     }
     return(
-        <>
+        <section id='trending' style={{display:categories ? 'none' : null}}>
             <h1 id='heading-trending'>Trending</h1>
             <div id='trending-scroller'>
                 <div id='trending-group'>
@@ -46,8 +42,7 @@ export default function Trending(){
                         ))}
                 </div>  
             </div>
-          
-        </>
+        </section>
 
     )
    

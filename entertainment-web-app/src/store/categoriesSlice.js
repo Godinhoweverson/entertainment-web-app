@@ -10,5 +10,21 @@ const categories = createSlice({
     },
 });
 
-export const categoryActions= categories.actions;
-export default categories
+const bookMarks = createSlice({
+    name:'bookmark',
+    initialState:{isBookmarked: false, title:null},
+    reducers:{
+        isBookmarked(state){
+            state.isBookmarked = !state.isBookmarked
+        },
+        handleTitle(state, action){
+            state.title = action.payload.title
+        }
+    }
+})
+
+export const categoryActions = categories.actions;
+export const bookmarkActions = bookMarks.actions;
+
+export const categoriesReducer = categories.reducer;
+export const bookmarksReducer = bookMarks.reducer;

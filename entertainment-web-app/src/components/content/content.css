@@ -25,6 +25,7 @@
     height: 2rem;
     right: 1rem;
     top: 1rem;
+    z-index: 99999;
 
 }
 #image-content{

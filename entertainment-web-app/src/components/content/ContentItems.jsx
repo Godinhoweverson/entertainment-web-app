@@ -1,13 +1,15 @@
 import Information from "../Util/Information";
 import { useState } from "react";
+
 import Button  from '../Util/Button.jsx';
 import bookmarkEmpty from '../../../assets/icon-bookmark-empty.svg';
+import bookmarkFull from '../../../assets/icon-bookmark-full.svg';
 
-import DATA from '../../data.json';
 import { useDispatch } from "react-redux";
 import { bookmarkActions } from '../../store/categoriesSlice'
 
 export default function ContentItems({item}){
+
     const [btnPlayActive, setBtnPlayActive] = useState(false);
     const dispatch = useDispatch();
 
@@ -25,10 +27,10 @@ export default function ContentItems({item}){
     }
 
     return(
-        <div id='content-item' key={item.title+item.category} onMouseOver={()=>handleMouseOver(item.title)} onMouseOut={handleMouseOut}>     
+        <div id='content-item' key={item.title} onMouseOver={()=>handleMouseOver(item.title)} onMouseOut={handleMouseOut}>     
             <div id='content'>
                 <div id='image-bookmark'>
-                    <img src={bookmarkEmpty} alt="Bookmark" onClick={() => handleBookmark(item.title, item.isBookmarked)}/>
+                    <img src={item.isBookmarked ? bookmarkFull : bookmarkEmpty} alt="Bookmark" onClick={() => handleBookmark(item.title, item.isBookmarked)}/>
                 </div>
                 <div>
                     {btnPlayActive === item.title && <Button hoover={btnPlayActive} />}

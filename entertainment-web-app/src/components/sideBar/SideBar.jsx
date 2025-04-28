@@ -35,7 +35,7 @@ export default function SideBar(){
                     <img src={categoryChoice === 'home' ? homeActive : homeInactive} alt="home icon" onClick={() => handleChoice('home', false)}/>
                     <img src={categoryChoice === 'movie' ? moviesActive : moviesInactive} alt="categories movies" onClick={() => handleChoice('movie','Movie')} />
                     <img src={categoryChoice === 'serie' ? seriesActive : seriesInactive} alt="tv series" onClick={() => handleChoice('serie', 'TV Series')} />
-                    <img src={categoryChoice === 'booknark' ? bookmarkActive : bookmarkInactive} alt="bookmark" onClick={() => handleChoice('boomark','bookmark')} />
+                    <img src={categoryChoice === 'bookmark' ? bookmarkActive : bookmarkInactive} alt="bookmark" onClick={() => handleChoice('bookmark','bookmark')} />
                 </div>
                 <div id='profile'>
                     <img src={avatar} alt="" />

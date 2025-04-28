@@ -8,6 +8,9 @@ export default defineConfig({
     host: '0.0.0.0',
     port: 5173, 
     strictPort: true, 
-    origin: "https://5173-godinhoweve-entertainme-1pzzksy5o2l.ws-eu118.gitpod.io", 
+    origin: "5173-godinhoweve-entertainme-1pzzksy5o2l.ws-us118.gitpod.io",
+    allowedHosts: [
+      "5173-godinhoweve-entertainme-1pzzksy5o2l.ws-eu118.gitpod.io"
+    ] 
   }
 })

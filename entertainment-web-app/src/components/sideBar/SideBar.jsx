@@ -38,7 +38,7 @@ export default function SideBar(){
                     <img src={categoryChoice === 'bookmark' ? bookmarkActive : bookmarkInactive} alt="bookmark" onClick={() => handleChoice('bookmark','bookmark')} />
                 </div>
                 <div id='profile'>
-                    <img src={avatar} alt="" />
+                    <img src={avatar} alt="profile" />
                 </div>
             </nav>
         </aside>

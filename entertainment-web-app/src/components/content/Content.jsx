@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 export default function Content(){
     const categories = useSelector((state) => state.category.category);
     const bookmarked = useSelector((state) => state.bookMarks);
+    const searchQuery = useSelector((state) => state.search);
 
     const [updateData, setUpdateData] = useState(DATA);
 
@@ -19,7 +20,7 @@ export default function Content(){
          );
     },[bookmarked.isBookmarked, bookmarked.title])
    
-
+    console.log(searchQuery)
     return (
         <>
            <h1 id='heading-trending'>{!categories ? 'Recommended for you' : categories}</h1>

@@ -6,15 +6,10 @@ const search = createSlice({
     initialState: DATA,
     reducers:{
         searchingContent(state, action){
-            state.filter((item) => {
-                let nameTitle = item.title.toLowerCase();
-                let payload = action.payload;
-                if(nameTitle.includes(payload)){
-                    return item;
-                }else{
-                    return "We don't have that...";
-                };
-            })
+            const query = action.payload.searchQuery.toLowerCase().trim();
+            return DATA.filter(item => 
+                item.title.toLowerCase().includes(query)
+            );
         },
     },
 });

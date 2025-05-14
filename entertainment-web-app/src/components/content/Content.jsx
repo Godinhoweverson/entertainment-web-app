@@ -8,8 +8,8 @@ export default function Content(){
     const bookmarked = useSelector((state) => state.bookMarks);
     const searchQuery = useSelector((state) => state.search);
 
-    const [updateData, setUpdateData] = useState(DATA);
-
+    const [updateData, setUpdateData] = useState(searchQuery);
+     
     useEffect(() =>{
          setUpdateData(prevData => 
             prevData.map((item) =>(
@@ -18,9 +18,16 @@ export default function Content(){
                 : item
             ))
          );
-    },[bookmarked.isBookmarked, bookmarked.title])
-   
-    console.log(searchQuery)
+    },[searchQuery,bookmarked.isBookmarked, bookmarked.title])
+
+    // useEffect(() => {
+    //     const updated = searchQuery.map((item) => (
+    //         item.title === bookmarked.title
+    //             ? { ...item, isBookmarked: bookmarked.isBookmarked }
+    //             : item
+    //     ));
+    //     setUpdateData(updated);
+    // }, [searchQuery, bookmarked.title, bookmarked.isBookmarked]);
     return (
         <>
            <h1 id='heading-trending'>{!categories ? 'Recommended for you' : categories}</h1>

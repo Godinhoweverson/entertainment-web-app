@@ -7,9 +7,12 @@ const search = createSlice({
     reducers:{
         searchingContent(state, action){
             const query = action.payload.searchQuery.toLowerCase().trim();
-            return DATA.filter(item => 
+            const result = DATA.filter(item => 
                 item.title.toLowerCase().includes(query)
             );
+
+            state.query = query;
+            state.result = result;
         },
     },
 });

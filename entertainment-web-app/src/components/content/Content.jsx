@@ -7,9 +7,9 @@ export default function Content(){
     const categories = useSelector((state) => state.category.category);
     const bookmarked = useSelector((state) => state.bookMarks);
     const searchQuery = useSelector((state) => state.search);
-
+  
     const [updateData, setUpdateData] = useState(searchQuery);
-     
+    console.log(searchQuery.result)
     useEffect(()=>{
         setUpdateData(searchQuery)
     },[searchQuery])
@@ -23,11 +23,16 @@ export default function Content(){
             ))
          );
     },[bookmarked.isBookmarked, bookmarked.title])
-
+    console.log(searchQuery.length === DATA.length)
     return (
-        <>
-           <h1 id='heading-trending'>{!categories ? 'Recommended for you' : categories}</h1>
-            <section id="content-group" key={bookmarked.title}>
+        <>  
+            {searchQuery.length === DATA.length ? (
+            <h1 id='heading-trending'>{!categories ? 'Recommended for you' : categories}</h1>
+            ) : (
+            <h1 id='heading-trending'>{`Found ${searchQuery.length} results for ‘Earth’`}</h1>
+            )}
+          
+            <section id="content-group" key={bookmarked.title}  className={ searchQuery.length < 4? 'seachGridItem' : undefined }>
             {updateData.map((item) => 
                 (!categories && <ContentItems item={item} />) ||
                 (categories === item.category && categories !== 'bookmark' && <ContentItems item={item} />) ||

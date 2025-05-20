@@ -8,7 +8,7 @@ import seriesInactive from '../../../assets/icon-nav-tv-series.svg'
 import seriesActive from '../../../assets/icon-category-tv.svg';
 
 import logo from '../../../assets/logo.svg'
-import avatar from '../../../assets/image-avatar.png'
+import avatar from '../../../assets/avatar.png'
 
 
 import { useDispatch } from 'react-redux'

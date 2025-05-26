@@ -5,7 +5,7 @@ const search = createSlice({
     name: 'searchContent',
     initialState:{
         query:'',
-        result:[]
+        result:DATA
     },
     reducers:{
         searchingContent(state, action){

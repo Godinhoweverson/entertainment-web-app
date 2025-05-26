@@ -1,7 +1,8 @@
 import DATA from '../../data.json';
-import { useSelector } from 'react-redux';
+import ContentItemsBookmark from './ContentItemsBookmark.jsx';
 import ContentItems from './ContentItems.jsx';
 import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 
 export default function Content(){
     const categories = useSelector((state) => state.category.category);
@@ -10,11 +11,9 @@ export default function Content(){
   
     const [updateData, setUpdateData] = useState(searchQuery);
 
-    let contentItem = [];
-
     useEffect(()=>{
         setUpdateData(searchQuery)
-        contentItem = searchQuery.filter((item) => item.category)
+      
     },[searchQuery])
 
     useEffect(() =>{
@@ -27,38 +26,29 @@ export default function Content(){
          );
     },[bookmarked.isBookmarked, bookmarked.title])
 
- 
-    // let heading;
+    let contentItem = [];
 
-    // if(searchQuery.length === DATA.length){
-    //     heading = <h1 id='heading-trending'>{!categories ? 'Recommended for you' : categories}</h1>
-    // }else{
-    //     heading = <h1 id='heading-trending'>{`Found ${searchQuery.length} results for ‘Earth’`}</h1>  
-    // }
-    let content;
-
-    if(searchQuery.length === 0 ){
-        content = DATA;
-    }else{
-        content = updateData;
+    if(searchQuery.length !== 0 ){
+        contentItem = updateData.filter((item) => item.category === categories || item.isBookmarked);
     }
 
-  
+    let heading;
 
+    if(searchQuery.length === DATA.length){
+        heading = <h1 id='heading-trending'>{!categories ? 'Recommended for you' : categories}</h1>
+    }else{
+        heading = <h1 id='heading-trending'>{`Found ${!contentItem.length ? searchQuery.length : contentItem.length} results for ‘Earth’`}</h1>  
+    }
 
     return (
-        <>  
-            {searchQuery.length === DATA.length ? (
-            <h1 id='heading-trending'>{!categories ? 'Recommended for you' : categories}</h1>
-            ) : (
-            <h1 id='heading-trending'>{`Found ${searchQuery.length} results for ‘Earth’`}</h1>
-            )}
-          
-            <section id="content-group" key={bookmarked.title}  className={ content.length < 4 &&  content.length > 0 ? 'seachGridItem' : undefined }>
-            {content.map((item) => 
+        <> 
+            {heading}
+            <section id="content-group" className={ contentItem.length < 4 &&  contentItem.length > 0 ? 'seachGridItem' : undefined }>
+            {updateData.map((item) => 
                 (!categories && <ContentItems item={item} />) ||
                 (categories === item.category && categories !== 'bookmark' && <ContentItems item={item} />) ||
-                (categories === 'bookmark' && item.isBookmarked && <ContentItems item={item} />)
+                (categories === 'bookmark' && item.isBookmarked && item.category === "Movie" && <ContentItems item={item} />) ||
+                (categories === 'bookmark' && item.isBookmarked && item.category === "TV Series" && <ContentItems item={item} />)
             )}
             </section>
         </>

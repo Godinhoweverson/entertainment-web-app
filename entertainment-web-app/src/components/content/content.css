@@ -3,7 +3,6 @@
     grid-template-columns:  auto auto auto auto auto;
     grid-template-rows: auto;
     gap: 2rem;
-    height: 100%;
     padding: 0 2rem 0 2rem;
 }
 
@@ -16,6 +15,27 @@
     margin-bottom: 0.5rem;
     border-radius: 0.5rem;
    
+}
+
+#bookmark-display{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+#bookmark-display h1{
+    margin: 2rem 0 2rem 0;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 200;
+}
+
+.bookmark-item{
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    grid-template-rows: auto;
+    gap: 2rem;
 }
 
 #image-bookmark{

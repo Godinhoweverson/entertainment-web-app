@@ -27,7 +27,7 @@ export default function ContentItems({item}){
     }
 
     return(
-        <div id='content-item' key={item.title+item.category} onMouseOver={()=>handleMouseOver(item.title)} onMouseOut={handleMouseOut}>     
+        <div id='content-item' onMouseOver={()=>handleMouseOver(item.title)} onMouseOut={handleMouseOut}>     
             <div id='content'>
                 <div id='image-bookmark'>
                     <img src={item.isBookmarked ? bookmarkFull : bookmarkEmpty} alt="Bookmark" onClick={() => handleBookmark(item.title, item.isBookmarked)}/>

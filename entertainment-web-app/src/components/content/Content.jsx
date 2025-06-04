@@ -40,16 +40,17 @@ export default function Content(){
         heading = <h1 id='heading-trending'>{`Found ${!contentItem.length ? searchQuery.length : contentItem.length} results for ‘Earth’`}</h1>  
     }
 
+    console.log(contentItem.length)
     return (
         <> 
-            {heading}
-            <section id="content-group" className={ contentItem.length < 4 &&  contentItem.length > 0 ? 'seachGridItem' : undefined }>
-            {updateData.map((item) => 
-                (!categories && <ContentItems item={item} />) ||
-                (categories === item.category && categories !== 'bookmark' && <ContentItems item={item} />) ||
-                (categories === 'bookmark' && item.isBookmarked && item.category === "Movie" && <ContentItems item={item} />) ||
-                (categories === 'bookmark' && item.isBookmarked && item.category === "TV Series" && <ContentItems item={item} />)
-            )}
+            {categories !== 'bookmark' && heading }
+            <section id="content-group" className={contentItem.length < 4 &&  contentItem.length > 0 ? 'seachGridItem' : undefined }>
+                {updateData.map((item) => 
+                    (!categories && <ContentItems key={item.title+item.category} item={item} />) ||
+                    (categories === item.category && categories !== 'bookmark' && <ContentItems key={item.title+item.category} item={item} />)
+                    // (categories === 'bookmark' && item.isBookmarked && <ContentItemsBookmark key={item.title+item.category} item={item}/>)
+                )}
+                {categories === 'bookmark' && <ContentItemsBookmark item={updateData} contentItem={contentItem} />}
             </section>
         </>
      

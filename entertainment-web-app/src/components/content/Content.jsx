@@ -8,9 +8,9 @@ export default function Content(){
     const categories = useSelector((state) => state.category.category);
     const bookmarked = useSelector((state) => state.bookMarks);
     const searchQuery = useSelector((state) => state.search.result);
-  
+    const query = useSelector((state) => state.search.query);
     const [updateData, setUpdateData] = useState(searchQuery);
-
+    console.log(query)
     useEffect(()=>{
         setUpdateData(searchQuery)
       
@@ -29,7 +29,7 @@ export default function Content(){
     let contentItem = [];
 
     if(searchQuery.length !== 0 ){
-        contentItem = updateData.filter((item) => item.category === categories || item.isBookmarked);
+        contentItem = updateData.filter((item) => item.category === categories || item.isBookmarked || !categories);
     }
 
     let heading;
@@ -37,10 +37,9 @@ export default function Content(){
     if(searchQuery.length === DATA.length){
         heading = <h1 id='heading-trending'>{!categories ? 'Recommended for you' : categories}</h1>
     }else{
-        heading = <h1 id='heading-trending'>{`Found ${!contentItem.length ? searchQuery.length : contentItem.length} results for ‘Earth’`}</h1>  
+        heading = <h1 id='heading-trending'>{`Found ${!contentItem.length ? searchQuery.length : contentItem.length} results for ${query}`}</h1>  
     }
 
-    console.log(contentItem.length)
     return (
         <> 
             {categories !== 'bookmark' && heading }
@@ -50,8 +49,9 @@ export default function Content(){
                     (categories === item.category && categories !== 'bookmark' && <ContentItems key={item.title+item.category} item={item} />)
                     // (categories === 'bookmark' && item.isBookmarked && <ContentItemsBookmark key={item.title+item.category} item={item}/>)
                 )}
-                {categories === 'bookmark' && <ContentItemsBookmark item={updateData} contentItem={contentItem} />}
             </section>
+            {categories === 'bookmark' && <ContentItemsBookmark item={updateData} contentItem={contentItem} />}
+
         </>
      
     )

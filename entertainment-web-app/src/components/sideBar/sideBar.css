@@ -8,7 +8,7 @@
     align-items: flex-start;
     justify-content: center;
     width: 8%;
-    height: 100%;
+    height: 100vh;
 }
 
 #navBar{
@@ -47,7 +47,7 @@
     #sideBar{
         flex-direction: row;
         width: 100%;
-        height: 8%;
+        height: 15%;
     }
     #navBar{
         height: 100%;

@@ -13,6 +13,7 @@ import { bookmarkActions } from '../../store/categoriesSlice'
 export default function Trending(){
     const categories = useSelector((state) => state.category.category);
     const bookmarked = useSelector((state) => state.bookMarks);
+    const query = useSelector((state) => state.search.query);
 
     const [btnPlayActive, setBtnPlayActive] = useState(false);
     const dispatch = useDispatch();
@@ -44,7 +45,7 @@ export default function Trending(){
     
 
     return(
-        <section id='trending' style={{display:categories ? 'none' : null}}>
+        <section id='trending' style={{display:categories || query ? 'none' : null}}>
             <h1 id='heading-trending'>Trending</h1>
             <div id='trending-scroller'>
                 <div id='trending-group'>

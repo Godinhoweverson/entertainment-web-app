@@ -5,10 +5,10 @@ import moviesActive from '../../../assets/icon-category-movie.svg'
 import bookmarkInactive from '../../../assets/icon-nav-bookmark.svg'
 import bookmarkActive from '../../../assets/icon-bookmark-full.svg'
 import seriesInactive from '../../../assets/icon-nav-tv-series.svg'
-import seriesActive from '../../../assets/icon-category-tv.svg';
+import seriesActive from '../../../assets/icon-category-tv.svg'
 
 import logo from '../../../assets/logo.svg'
-import avatar from '../../../assets/avatar.png'
+import avatar from '../../../assets/avatar.svg'
 
 
 import { useDispatch } from 'react-redux'

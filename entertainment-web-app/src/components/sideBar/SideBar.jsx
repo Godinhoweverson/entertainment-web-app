@@ -1,15 +1,13 @@
-import homeInactive from '../../../assets/icon-nav-home.svg'
-import homeActive from '../../../assets/icon-nav-home-white.svg'
-import moviesInactive from '../../../assets/icon-nav-movies.svg'
-import moviesActive from '../../../assets/icon-category-movie.svg'
-import bookmarkInactive from '../../../assets/icon-nav-bookmark.svg'
-import bookmarkActive from '../../../assets/icon-bookmark-full.svg'
-import seriesInactive from '../../../assets/icon-nav-tv-series.svg'
-import seriesActive from '../../../assets/icon-category-tv.svg'
+import homeInactive from '../../../public/icon-nav-home.svg'
+import homeActive from '../../../public/icon-nav-home-white.svg'
+import moviesInactive from '../../../public/icon-nav-movies.svg'
+import moviesActive from '../../../public/icon-category-movie.svg'
+import bookmarkInactive from '../../../public/icon-nav-bookmark.svg'
+import bookmarkActive from '../../../public/icon-bookmark-full.svg'
+import seriesInactive from '../../../public/icon-nav-tv-series.svg'
+import seriesActive from '../../../public/icon-category-tv.svg'
 
-import logo from '../../../assets/logo.svg'
-import avatar from '../../../assets/avatar.svg'
-
+import logo from '../../../public/logo.svg'
 
 import { useDispatch } from 'react-redux'
 import { categoryActions } from '../../store/categoriesSlice'
@@ -38,7 +36,7 @@ export default function SideBar(){
                     <img src={categoryChoice === 'bookmark' ? bookmarkActive : bookmarkInactive} alt="bookmark" onClick={() => handleChoice('bookmark','bookmark')} />
                 </div>
                 <div id='profile'>
-                    <img src={avatar} alt="profile" />
+                    <img src='../../../public/avatar.png' alt="profile" />
                 </div>
             </nav>
         </aside>

@@ -1,4 +1,4 @@
-import player from '../../../assets/icon-play.svg';
+import player from '../../../public/icon-play.svg';
 
 export default function Button({hoover}){
     return(

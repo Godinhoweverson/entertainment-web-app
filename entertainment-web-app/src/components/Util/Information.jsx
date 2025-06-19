@@ -1,5 +1,5 @@
-import categoryMovie from '../../../assets/icon-category-movie.svg';
-import categoryTv from '../../../assets/icon-category-tv.svg';
+import categoryMovie from '../../../public/icon-category-movie.svg';
+import categoryTv from '../../../public/icon-category-tv.svg';
 
 export default function Information({year, category, rating, title}){
     return(

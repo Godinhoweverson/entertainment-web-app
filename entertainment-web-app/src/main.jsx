@@ -6,12 +6,14 @@ import './components/search/search.css'
 import './components/trending/trending.css'
 import './components/Util/util.css'
 import './components/content/content.css'
-import App from './App.jsx'
+import './components/user/login.css'
+
 import store  from '../src/store'
 import { Provider } from 'react-redux'
+import Router from './Router.jsx'
 
 createRoot(document.getElementById('root')).render(
   <Provider store={store}>
-    <App />
+    <Router />
   </Provider>
 )

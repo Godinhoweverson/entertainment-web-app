@@ -1,0 +1,58 @@
+#login{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+}
+
+#login-container{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background-color: #161D2F;
+    flex-direction: column;
+    width:  400px;
+    height: 373px;
+    border-radius: 20px;
+    margin-top: 6rem;
+    padding: 2rem;
+}
+
+#login-container h1{
+    font-size: 2rem;
+    color: white;
+    font-weight: 200;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.custum-input{
+    border: none;
+    border-bottom: 2px solid #333; 
+    outline: none;
+    padding: 8px 0;
+    font-size: 1.5rem;
+    background: transparent;
+    color: white;
+    width: 100%;
+}
+
+
+  .custom-input::placeholder {
+    color: white; 
+    font-weight: 200;
+    font-size: 1.5rem;
+  }
+
+  /* Optional: change border color on focus */
+  .custom-input:focus {
+    border-bottom-color: #007BFF; /* e.g., blue when focused */
+  }

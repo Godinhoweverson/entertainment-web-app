@@ -13,6 +13,7 @@ import { useDispatch } from 'react-redux'
 import { categoryActions } from '../../store/categoriesSlice'
 import { useState } from 'react';
 
+import { Link } from 'react-router-dom'
 
 export default function SideBar(){
     const dispatch = useDispatch();
@@ -27,7 +28,9 @@ export default function SideBar(){
         <aside id="sideBar">
             <nav id='navBar'>
                 <div>
-                    <img src={logo} alt="movies icon" />
+                    <Link to="/login">
+                        <img src={logo} alt="movies icon" />
+                    </Link>
                 </div>
                 <div id='iconSelection'>
                     <img src={categoryChoice === 'home' ? homeActive : homeInactive} alt="home icon" onClick={() => handleChoice('home', false)}/>

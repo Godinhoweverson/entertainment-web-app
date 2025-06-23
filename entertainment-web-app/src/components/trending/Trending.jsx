@@ -1,7 +1,7 @@
 import DATA from '../../data.json';
 
-import bookmarkEmpty from '../../../public/icon-bookmark-empty.svg';
-import bookmarkFull from '../../../public/icon-bookmark-full.svg';
+import bookmarkEmpty from '../../public/icon-bookmark-empty.svg';
+import bookmarkFull from '../../public/icon-bookmark-full.svg';
 import Button from '../Util/Button.jsx';
 import Information from '../Util/Information.jsx'
 

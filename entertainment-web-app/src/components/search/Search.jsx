@@ -1,4 +1,4 @@
-import searchIcon from '../../../public/icon-search.svg';
+import searchIcon from '../../public/icon-search.svg';
 import { useDispatch } from 'react-redux';
 import {searchActions} from '../../store/searchSlice';
 

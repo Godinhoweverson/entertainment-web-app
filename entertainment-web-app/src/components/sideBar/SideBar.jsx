@@ -7,7 +7,7 @@ import bookmarkInactive from '../../public/icon-nav-bookmark.svg'
 import bookmarkActive from '../../public/icon-bookmark-full.svg'
 import seriesInactive from '../../public/icon-nav-tv-series.svg'
 import seriesActive from '../../public/icon-category-tv.svg'
-
+import profileImg from '../../public/profile.svg'
 import logo from '../../public/logo.svg'
 
 import { useDispatch } from 'react-redux'
@@ -39,8 +39,8 @@ export default function SideBar(){
                     <img src={categoryChoice === 'serie' ? seriesActive : seriesInactive} alt="tv series" onClick={() => handleChoice('serie', 'TV Series')} />
                     <img src={categoryChoice === 'bookmark' ? bookmarkActive : bookmarkInactive} alt="bookmark" onClick={() => handleChoice('bookmark','bookmark')} />
                 </div>
-                <div id='profile'>
-                    <img src='../../../public/avatar.png' alt="profile" />
+                <div id='profile'> 
+                    <img src={profileImg} alt="profile" />
                 </div>
             </nav>
         </aside>

@@ -7,6 +7,7 @@ import './components/trending/trending.css'
 import './components/Util/util.css'
 import './components/content/content.css'
 import './components/user/login.css'
+import './components/Profile/profile.css'
 
 import store  from '../src/store'
 import { Provider } from 'react-redux'

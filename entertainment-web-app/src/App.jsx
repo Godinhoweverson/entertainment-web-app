@@ -4,6 +4,7 @@ import Search from './components/search/Search'
 import Trending from './components/trending/Trending.jsx'
 import './App.css'
 import Content from './components/content/Content.jsx'
+import Profile from './components/Profile/Profile.jsx'
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
     <div id='container'>
       <SideBar/>
       <main>
+        <Profile/>
         <Search/>
         <Trending/>
         <Content/>

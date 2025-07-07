@@ -1,33 +1,19 @@
-import {doc, setDoc, updateDoc} from 'firebase/firestore'
-import { db } from '../firebase';
-import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { collection, addDoc } from "firebase/firestore";
+import {db} from '../firebase'
 
-export const createUserProfile = async(user) => {
+export async function createProfile(user) {
 
-    if(!user || !user.id){
-        console.error('Invalid user object',user);
-        return;
-    }
-
-    const userRef = doc(db, 'users', user.uid);
-    await setDoc(userRef, {
-        name: '',
-        photoURL:'',
-        email: user.email,
-        address:'',
-        country:''
+  try {
+    const docRef = await addDoc(collection(db, "profile"), {
+        uid:user.uid,
+        name:user.name,
+        address:user.address,
+        country: user.country,
     });
-};
-
-export const uploadProfileImage = async(file, uid) =>{
-    const storage = getStorage();
-    const storegeRef = ref(storage, `profileImage/${uid}`);
-    await uploadBytes(storegeRef, file);
-    const url = await getDownloadURL(storegeRef);
-    return url;
+    console.log("Document written with ID: ", docRef.id);
+  } catch (e) {
+    console.error("Error adding document: ", e);
+  }
 }
 
-export const updateUserProfile = async(uid, name, photoURL)=>{
-    const userRef = doc(db, 'users', uid);
-    await updateDoc(userRef,{name, photoURL});
-};
+

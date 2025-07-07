@@ -2,7 +2,7 @@ import { useState } from "react";
 import { createUserWithEmailAndPassword  } from "firebase/auth";
 import { auth } from '../../firebase';
 import { useNavigate } from "react-router-dom";
-import {createUserProfile, uploadProfileImage} from '../../profileDB/profileDb'
+import { createProfile } from '../../profileDB/profileDb';
 import { Link } from "react-router-dom";
 
 import logo from '../../public/logo.svg'
@@ -39,16 +39,9 @@ export default function SignUp(){
             );
             const user = userCredential.user;
 
-            let photoURL = '';
-            if(account.photofile){
-                photoURL = await uploadProfileImage(account.profiFile, user.uid)
-            }
-
-            await createUserProfile({
+            createProfile({
                 uid:user.uid,
-                email:user.email,
                 name:account.name,
-                photoURL,
                 address:account.address,
                 country: account.country,
             });
@@ -80,14 +73,14 @@ export default function SignUp(){
                         required 
                         onChange={handleChange}
                         />
-                         <input 
+                         {/* <input 
                         type="file"
                         name="photoFile"
                         placeholder="Profile photo"
                         className="custum-input" 
                         required 
                         onChange={handleChange}
-                        />
+                        /> */}
                     <input 
                         type="email"
                         name="email"

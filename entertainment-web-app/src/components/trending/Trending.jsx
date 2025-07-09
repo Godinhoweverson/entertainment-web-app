@@ -1,9 +1,9 @@
 import DATA from '../../data.json';
 
-import bookmarkEmpty from '../../public/icon-bookmark-empty.svg';
-import bookmarkFull from '../../public/icon-bookmark-full.svg';
-import Button from '../Util/Button.jsx';
-import Information from '../Util/Information.jsx'
+import bookmarkEmpty from '../../assets/icons/icon-bookmark-empty.svg';
+import bookmarkFull from '../../assets/icons/icon-bookmark-full.svg';
+import Button from '../util/Button.jsx';
+import Information from '../util/Information.jsx'
 
 import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';

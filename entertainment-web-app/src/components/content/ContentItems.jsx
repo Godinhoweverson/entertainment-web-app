@@ -1,9 +1,9 @@
-import Information from "../Util/Information";
+import Information from "../util/Information.jsx";
 import { useState } from "react";
 
-import Button  from '../Util/Button.jsx';
-import bookmarkEmpty from '../../public/icon-bookmark-empty.svg';
-import bookmarkFull from '../../public/icon-bookmark-full.svg';
+import Button  from '../util/Button.jsx';
+import bookmarkEmpty from '../../assets/icons/icon-bookmark-empty.svg';
+import bookmarkFull from '../../assets/icons/icon-bookmark-full.svg';
 
 import { useDispatch } from "react-redux";
 import { bookmarkActions } from '../../store/categoriesSlice'

@@ -4,7 +4,7 @@ import Search from './components/search/Search'
 import Trending from './components/trending/Trending.jsx'
 import './App.css'
 import Content from './components/content/Content.jsx'
-import Profile from './components/Profile/Profile.jsx'
+import Profile from './components/profile/Profile.jsx'
 
 function App() {
   return (

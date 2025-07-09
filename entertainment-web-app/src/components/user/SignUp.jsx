@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { createProfile } from '../../profileDB/profileDb';
 import { Link } from "react-router-dom";
 
-import logo from '../../public/logo.svg'
+import logo from '../../assets/icons/logo.svg'
 
 export default function SignUp(){
     const [account, setAccount] = useState({

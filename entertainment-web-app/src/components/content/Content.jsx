@@ -10,7 +10,7 @@ export default function Content(){
     const searchQuery = useSelector((state) => state.search.result);
     const query = useSelector((state) => state.search.query);
     const [updateData, setUpdateData] = useState(searchQuery);
-    console.log(query)
+
     useEffect(()=>{
         setUpdateData(searchQuery)
       

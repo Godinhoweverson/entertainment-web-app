@@ -1,0 +1,91 @@
+#profile-page{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9;
+
+}
+
+#profile-popUp{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 400px;
+    width: 450px;
+    background-color: #161D2F;
+    border-radius: 1rem;
+    padding: 2rem;
+    position: relative;
+}
+
+.close{
+    position: absolute;
+    left: 2rem;
+}
+
+.email-popup{
+    font-size: 1.5rem;
+    color: white;
+    font-weight: 200;
+}
+
+.profile-image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    background-color: #10141E;
+    border: 4px solid white;
+}
+
+.profile-image img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+#user-details h1{
+    color: white;
+    font-size: 2rem;
+    font-weight: 200;
+}
+
+#btns-logout{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 100%;
+    height: 48px;
+}
+
+.manage-account{
+    background-color: white;
+    color: #FC4747;
+    width: 45%;
+    height: 100%;
+    font-size: 1rem;
+    border-radius: 5px;
+    font-weight: 500;
+    margin: 1rem;
+
+}
+
+
+
+.logOut{
+    background-color: #FC4747;
+    color: white;
+    width: 45%;
+    height: 100%;
+    font-size: 1rem;
+    border-radius: 5px;
+    font-weight: 500;
+}
+

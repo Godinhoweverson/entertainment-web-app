@@ -12,18 +12,31 @@ import logo from '../../assets/Images/logo.svg'
 
 import { useDispatch } from 'react-redux'
 import { categoryActions } from '../../store/categoriesSlice'
+import { modalAction } from '../../store/modal'
+import { useSelector } from 'react-redux'
+
 import { useState } from 'react';
 
 import { Link } from 'react-router-dom'
 
+import Profile from '../profile/Profile'
+
 export default function SideBar(){
     const dispatch = useDispatch();
+
     const [categoryChoice, isCategoryChoice] = useState('home');
+
+    const modal = useSelector((state) => state.modal);
 
     function handleChoice(categoryActive, category){
         dispatch(categoryActions.categoryChoice({category}));
         isCategoryChoice(categoryActive);
     }
+
+    function handleClose(){
+        dispatch(modalAction.modalClose(true));
+    }
+
 
     return(
         <aside id="sideBar">
@@ -39,9 +52,10 @@ export default function SideBar(){
                     <img src={categoryChoice === 'serie' ? seriesActive : seriesInactive} alt="tv series" onClick={() => handleChoice('serie', 'TV Series')} />
                     <img src={categoryChoice === 'bookmark' ? bookmarkActive : bookmarkInactive} alt="bookmark" onClick={() => handleChoice('bookmark','bookmark')} />
                 </div>
-                <div id='profile'> 
+                <div id='profile' onClick={handleClose}> 
                     <img src={profileImg} alt="profile" />
                 </div>
+                <Profile/>
             </nav>
         </aside>
 

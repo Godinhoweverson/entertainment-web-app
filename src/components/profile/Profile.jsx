@@ -1,28 +1,21 @@
 import girl from '../../assets/Images/girl.jpg?inline';
 import back from '../../assets/Images/close.svg';
-import Logout from '../user/Logout';
+import handleLogout from '../user/Logout';
 
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { modalAction } from '../../store/modal';
 
-import { useState } from 'react';
-
 export default function Profile(){
     const dispatch = useDispatch();
+    const modalOpen = useSelector((state) => state.modal.open);
 
-    const [modalClose, setModalClose] = useState();
-
-    const modal = useSelector((state) => state.modal);
-
-    function handleClose(){
-        dispatch(modalAction.modalClose(false));
-        setModalClose(modalClose)
+     function handleClose(){
+        dispatch(modalAction.closeModal());
     }
-    
-        console.log(modalClose)
+
     return(
-        <section id="profile-page" style={{display: modalClose ? 'flex' : 'none'}}>
+        <section id="profile-page" style={{display: modalOpen ? 'flex' : 'none'}}>
             <div id="profile-popUp">
                 <p className='close' onClick={handleClose}>
                     <img src={back} alt="Close the pop up" />
@@ -36,7 +29,7 @@ export default function Profile(){
             </div>
             <div id="btns-logout">
                 <button className='manage-account'>Manage your account</button>
-                <button className='logOut' onClick={Logout}>Log out</button>
+                <button className='logOut' onClick={()=>handleLogout(dispatch)}>Log out</button>
             </div> 
             </div>      
         </section>

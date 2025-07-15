@@ -15,28 +15,48 @@ import { categoryActions } from '../../store/categoriesSlice'
 import { modalAction } from '../../store/modal'
 import { useSelector } from 'react-redux'
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { Link } from 'react-router-dom'
 
 import Profile from '../profile/Profile'
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { auth } from '../../firebase';
 
 export default function SideBar(){
     const dispatch = useDispatch();
 
     const [categoryChoice, isCategoryChoice] = useState('home');
-
-    const modal = useSelector((state) => state.modal);
+    const [user, setUser] = useState();
 
     function handleChoice(categoryActive, category){
         dispatch(categoryActions.categoryChoice({category}));
         isCategoryChoice(categoryActive);
     }
 
-    function handleClose(){
-        dispatch(modalAction.modalClose(true));
-    }
 
+    useEffect(()=>{
+         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+            if (currentUser) {
+                const uid = currentUser.uid;
+                setUser(currentUser)
+            } else {
+                setUser(null)
+        }});
+
+        return ()=> unsubscribe();
+    },[]);
+
+    
+    function handleOpen(){
+        if(user){
+            dispatch(modalAction.openModal());
+        }else{
+            console.log('Have to login first')
+        }
+        
+    }
+   
 
     return(
         <aside id="sideBar">
@@ -52,7 +72,7 @@ export default function SideBar(){
                     <img src={categoryChoice === 'serie' ? seriesActive : seriesInactive} alt="tv series" onClick={() => handleChoice('serie', 'TV Series')} />
                     <img src={categoryChoice === 'bookmark' ? bookmarkActive : bookmarkInactive} alt="bookmark" onClick={() => handleChoice('bookmark','bookmark')} />
                 </div>
-                <div id='profile' onClick={handleClose}> 
+                <div id='profile' onClick={handleOpen}> 
                     <img src={profileImg} alt="profile" />
                 </div>
                 <Profile/>

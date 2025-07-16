@@ -13,14 +13,15 @@ import logo from '../../assets/Images/logo.svg'
 import { useDispatch } from 'react-redux'
 import { categoryActions } from '../../store/categoriesSlice'
 import { modalAction } from '../../store/modal'
-import { useSelector } from 'react-redux'
 
 import { useEffect, useState } from 'react';
 
 import { Link } from 'react-router-dom'
 
 import Profile from '../profile/Profile'
-import { getAuth, onAuthStateChanged } from "firebase/auth";
+import Modal from '../user/Modal.jsx';
+
+import { onAuthStateChanged } from "firebase/auth";
 import { auth } from '../../firebase';
 
 export default function SideBar(){
@@ -28,6 +29,7 @@ export default function SideBar(){
 
     const [categoryChoice, isCategoryChoice] = useState('home');
     const [user, setUser] = useState();
+    const [open, setOpen] = useState();
 
     function handleChoice(categoryActive, category){
         dispatch(categoryActions.categoryChoice({category}));
@@ -53,6 +55,7 @@ export default function SideBar(){
             dispatch(modalAction.openModal());
         }else{
             console.log('Have to login first')
+            setOpen(true)
         }
         
     }
@@ -75,6 +78,9 @@ export default function SideBar(){
                 <div id='profile' onClick={handleOpen}> 
                     <img src={profileImg} alt="profile" />
                 </div>
+                <Modal isOpen={open}>
+                    <h2>I'm rendered with createPortal!</h2>
+                </Modal>
                 <Profile/>
             </nav>
         </aside>

@@ -10,7 +10,7 @@ export default defineConfig({
     strictPort: true, 
     origin: "5173-godinhoweve-entertainme-1pzzksy5o2l.ws-us118.gitpod.io",
     allowedHosts: [
-      "5173-godinhoweve-entertainme-ri4qhj9fplg.ws-eu120.gitpod.io" 
+      "5173-godinhoweve-entertainme-41aa1l3kzvm.ws-eu121.gitpod.io" 
       ] 
   }
 })

@@ -1,0 +1,57 @@
+#modal-root{
+    position:fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10000;
+    background-color: #161D2F;
+    border-radius: 1rem;
+    width: 30rem;
+    height: 15rem;
+    padding: 2rem;
+}
+
+#modal{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    
+}
+
+#modal h1{
+    color: white;
+}
+
+#modal p{
+    color: white;
+}
+
+#modal-btns{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+    width: 100%;
+    height: 48px;
+}
+
+.modal-btn-login{
+    width: 35%;
+    height: 100%;
+    background-color: white;
+    color: #161D2F;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.modal-btn-signUp{
+    width: 35%;
+    height: 100%;
+    color: #161D2F;
+    background-color: #FC4747;
+    border-radius: 5px;
+    font-size: 1rem;
+}

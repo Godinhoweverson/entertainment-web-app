@@ -8,6 +8,7 @@ import './components/util/util.css'
 import './components/content/content.css'
 import './components/user/login.css'
 import './components/profile/profile.css'
+import './components/user/modal.css'
 
 import store  from '../src/store'
 import { Provider } from 'react-redux'

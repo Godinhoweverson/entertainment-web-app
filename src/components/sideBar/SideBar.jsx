@@ -17,6 +17,7 @@ import { modalAction } from '../../store/modal'
 import { useEffect, useState } from 'react';
 
 import { Link } from 'react-router-dom'
+import { createPortal } from 'react-dom'
 
 import Profile from '../profile/Profile'
 import Modal from '../user/Modal.jsx';
@@ -29,7 +30,7 @@ export default function SideBar(){
 
     const [categoryChoice, isCategoryChoice] = useState('home');
     const [user, setUser] = useState();
-    const [open, setOpen] = useState();
+    const [showModal, setShowModal] = useState(false);
 
     function handleChoice(categoryActive, category){
         dispatch(categoryActions.categoryChoice({category}));
@@ -51,11 +52,12 @@ export default function SideBar(){
 
     
     function handleOpen(){
+        console.log(user)
         if(user){
             dispatch(modalAction.openModal());
         }else{
             console.log('Have to login first')
-            setOpen(true)
+            setShowModal(true)
         }
         
     }
@@ -78,9 +80,10 @@ export default function SideBar(){
                 <div id='profile' onClick={handleOpen}> 
                     <img src={profileImg} alt="profile" />
                 </div>
-                <Modal isOpen={open}>
-                    <h2>I'm rendered with createPortal!</h2>
-                </Modal>
+                {showModal && createPortal(
+                    <Modal onClose={() => setShowModal(false)}/>,
+                    document.getElementById('modal-root')
+                )}
                 <Profile/>
             </nav>
         </aside>

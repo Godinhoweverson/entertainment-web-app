@@ -1,15 +1,15 @@
-import ReactDom from 'react-dom'
+import { Link } from "react-router-dom";
 
-export default function(){
-    return ReactDom.createPortal(
-        <div id="modal">
+export default function({onClose}){
+    return (
+        <div id="modal-box">
             <h1 className="modal-title">User not logged in</h1>
             <p>To access your profile, please log in your account first.</p>
             <div id='modal-btns'>
-                <button className="modal-btn-login">Login</button>
-                <button className="modal-btn-signUp">Cancel</button>
+                <Link className="modal-btn-login" to="/login">Login</Link>
+                <button className="modal-btn-signUp" onClick={onClose}>Cancel</button>
             </div>
-        </div>,
-        document.getElementById('modal-root')
-    );
+        </div>
+        
+    )
 }
